@@ -1,0 +1,65 @@
+.app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.panel-left,
+.panel-right {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.panel-left {
+  border-right: 1px solid var(--border);
+}
+
+.panel-right {
+  overflow-y: auto;
+}
+
+.editor-container {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  .panel-left,
+  .panel-right {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .panel-left {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .editor-container {
+    height: 300px;
+    flex: none;
+  }
+
+  .panel-left button {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+  }
+}
